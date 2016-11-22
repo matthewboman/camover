@@ -1,0 +1,44 @@
+<!-- Start map -->
+<ng-map center="41,-87" zoom="5" on-click="vm.placeCamera(data)">
+
+  <!-- Place marker for each camera -->
+  <marker id='{{camera._id}}' position="{{camera.position}}"
+        ng-repeat="camera in vm.cameras"
+        on-click="vm.showDetail(camera)">
+  </marker>
+
+  <marker id="newCamera" position="{{e.latLng}}">
+
+  <!-- Open info window when clicked -->
+  <info-window id="camera">
+    <div ng-non-bindable="">
+      <b>submitted by:</b> {{vm.camera.username}}<br/>
+      <b>votes:</b> {{vm.camera.rating}}
+        <!-- disable if user has voted -->
+        <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"
+          ng-click="vm.voteUp(camera)"></span>
+        <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"
+          ng-click="vm.voteDown(camera)"></span>
+      <br/>
+      <b>location:</b> {{vm.camera.position}}<br/>
+      <b>info:</b> {{vm.camera.info}}<br/>
+    </div>
+  </info-window>
+
+  <!-- Open info window when clicked -->
+  <info-window id="newCamera">
+    <div ng-non-bindable="">
+      <form name ="addForm" novalidate>
+          <div class="form-group">
+            <label for="info">Info </label>
+              <textarea name="info" cols="40" rows="5" type="text" class="form-control" id="info" placeholder="useful information" ng-model="vm.formData.info"></textarea>
+          </div>
+          <!-- Submit button.-->
+          <button type="submit" class="btn btn-danger btn-block" ng-click="vm.createNewCamera()">Add Camera</button>
+      </form>
+    </div>
+  </info-window>
+
+</ng-map>
+<!-- End map -->
+<br>

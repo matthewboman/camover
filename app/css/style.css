@@ -1,0 +1,26 @@
+body {
+  background-color: #56657F;
+  font-family: 'Conso', Courier New, monospace;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-weight: bold;
+}
+
+a {
+  color: #889FC9;
+}
+
+.footer {
+  position: static;
+  bottom: 0;
+  text-align: right;
+}
+
+
+/*google map*/
+ng-map {
+ height: 80%;
+ width: 100%;
+}

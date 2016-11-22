@@ -1,0 +1,80 @@
+<html ng-app="camover">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Camover</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../bower_components/components-font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" href="./app/css/style.css"/>
+  </head>
+
+  <body ng-controller="authCtrl as main">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a href="/" class="navbar-brand"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span> camover1984</a>
+        </div>
+
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+              <li><a ui-sref="about">about</a></li>
+              <li><a ui-sref="contribute">contribute</a></li>
+              <li><a ui-sref="references">references</a></li>
+              <li ng-if="!main.loggedIn"><a ui-sref="login">login</a></li>
+              <li ng-if="!main.loggedIn"><a ui-sref="register">register</a></li>
+              <li ng-if="main.loggedIn"><a ui-sref="logout" ng-click="main.doLogout()">logout</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <!-- Page Content -->
+    <div class=container>
+      <div ui-view></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class=container>
+      <p><a class="btn btn-social-icon btn-github">Check us out on Github<span class="fa fa-github"></span></a></p>
+    </div>
+    </div>
+
+  </body>
+    <!-- libraries -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <!-- app -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.routes.js"></script>
+    <!-- map -->
+    <script src="app/map/map.module.js"></script>
+    <script src="app/map/map.controller.js"></script>
+    <script src="app/map/camera.service.js"></script>
+    <!-- user -->
+    <script src="app/user/user.module.js"></script>
+    <script src="app/user/register/register.module.js"></script>
+    <script src="app/user/register/register.controller.js"></script>
+    <script src="app/user/register/register.service.js"></script>
+    <script src="app/user/auth/auth.module.js"></script>
+    <script src="app/user/auth/auth.controller.js"></script>
+    <script src="app/user/auth/auth.service.js"></script>
+</html>
