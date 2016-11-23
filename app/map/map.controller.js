@@ -46,7 +46,7 @@
         voted: [username]
       };
       if (!username) {
-        $window.alert('You must be logged in to vote');
+        $window.alert('You must be logged in to post camera');
       } else {
         cameraService.postCamera(cameraData)
           .then(function(data) {
