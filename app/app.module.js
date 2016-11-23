@@ -7,10 +7,4 @@
     'user'
     ])
 
-    // Do I neet this?
-    // .config(function($httpProvider) {
-    //   // pushing token to HTTP request
-    //   $httpProvider.interceptors.push('AuthInterceptor');
-    // });
-
 })(window, window.angular);
