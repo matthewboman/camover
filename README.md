@@ -15,6 +15,17 @@ There are always things that need worked on:
     bot/hack prevention:
         --> If clauses that either limit posts per session or posts within a timeframe?
         --> general injection fricks
+    
+    spiders:
+        ---> Companies have similar sites for rad or nefarious purposes; let's gank their data.
+            [Video Surveillance](https://www.videosurveillance.com/communitycam/)
+            [Treasure Hunt](https://cctvtreasurehunt.wordpress.com/map/)
+            [City of Baltimore](https://data.baltimorecity.gov/Public-Safety/CCTV-Locations/hdyb-27ak)
+            [CCTV Map](https://thecctvmap.wordpress.com/)
+            
+    clustering:
+        --> As more cameras get placed, the map is going to look hella messy. Let's make the 
+        markers cluster together.
         
     aesthetics
     
