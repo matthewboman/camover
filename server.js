@@ -26,13 +26,13 @@ mongoose.connect(config.database, function(err) {
 // ========================  Middleware ==============================
 app.use(bodyParser.json());
 app.use('/app', express.static(__dirname + '/app'));
+app.use('/node_modules',  express.static(__dirname + '/node_modules'));
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
-
 
 // ========================= Routes ========================================
 // camera
 app.get('/cameras', cameraController.getCameras);
-app.post('/cameras', cameraController.addCamera);
+app.post('/cameras', cameraController.addCamera); 
 app.put('/cameras/:_id', cameraController.voteCamera);
 // user
 app.post('/users/register', userController.createUser);

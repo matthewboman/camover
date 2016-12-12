@@ -62,7 +62,7 @@ function create(userParam) {
     // Insert user to database
     db.users.insert(user, function (err, doc) { //user
       if (err) deferred.reject(err);
-        deferred.resolve();
+      deferred.resolve();
     });
     sendEmail();
   }
@@ -104,7 +104,7 @@ function verify(username) {
       // fields to update
       var set = {verified: true};
       db.users.update(
-        { username: mongo.helper.toObjectID(username) }, // this might go
+        { username: mongo.helper.toObjectID(username) }, 
         { $set: set },
         function (err, doc) {
           if (err) deferred.reject(err.name + ': ' + err.message);
