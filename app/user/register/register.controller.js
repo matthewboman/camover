@@ -14,7 +14,6 @@
             $location.path('/check-email');
           })
           .catch(function(error) {
-            console.log(error.data);
             vm.error = error.data;
           })
         }

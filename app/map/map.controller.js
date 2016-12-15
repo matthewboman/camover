@@ -1,7 +1,7 @@
 (function(window, angular, undefined) {
   angular.module('map')
-  .controller('mapCtrl', ['NgMap', 'cameraService', '$window',
-    function(NgMap, cameraService, $window) {
+  .controller('mapCtrl', ['NgMap', 'cameraService', '$window', '$uibModal',
+    function(NgMap, cameraService, $window, $uibModal) {
 
     var vm = this;
     var username = localStorage.getItem('username');
@@ -46,7 +46,9 @@
         voted: [username]
       };
       if (!username) {
-        $window.alert('You must be logged in to post camera');
+        $uibModal.open({
+          templateUrl: './app/views/popup.html',
+        });
       } else {
         cameraService.postCamera(cameraData)
           .then(function(data) {
@@ -66,9 +68,9 @@
     // Vote on camera
     vm.voteUp = function(e, camera) {
       if (contains(vm.camera.voted, username)) {
-        $window.alert('You\'ve already voted');
+        // $window.alert('You\'ve already voted');
       } else if (!username){
-        $window.alert('You must be logged in to vote');
+        // $window.alert('You must be logged in to vote');
       } else {
         vm.camera.rating += 1;
         vm.camera.voted.push(username);
@@ -80,9 +82,9 @@
 
     vm.voteDown = function() {
       if (contains(vm.camera.voted, username)) {
-        $window.alert('You\'ve already voted');
+        // $window.alert('You\'ve already voted');
       } else if (!username){
-        $window.alert('You must be logged in to vote');
+        // $window.alert('You must be logged in to vote');
       } else {
         vm.camera.rating -= 1;
         vm.camera.voted.push(username);

@@ -13,7 +13,7 @@
       // Create new user
       function create(userData) {
         return $http.post('/users/register', userData)
-          .then(handleSuccess, handleError)
+          .then(handleSuccess, handleError);
       }
 
       // Verify user

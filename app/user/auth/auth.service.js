@@ -4,7 +4,7 @@
 
 //======= ================== Handle login ===========================
     .factory('authService', ['$http', '$q', 'authToken',
-      function($http, $q, authToken) { // authToken, authInterceptor
+      function($http, $q, authToken) { // authInterceptor
 
       var authService = {};
 
@@ -18,7 +18,7 @@
       // Get token, etc.
       function getUser() {
         if(authToken.getToken()) {
-          // return res.data;
+          return res.data;
         } else {
           return $q.reject({message: "User has no token"});
         }
@@ -30,10 +30,13 @@
           username: username,
           password: password
         })
-        .success(function(data) {
-          authToken.setToken(data.token);
+        .then(function(res) {
+          authToken.setToken(res.data.token);
           authToken.setUser(username);
-          return data;
+          return res.data;
+        })
+        .catch(function(err) {
+          return err;
         })
       }
 
@@ -121,5 +124,16 @@
     //       return $q.reject(response);
     //     }
     // }])
+
+    // ============== Private inner functions ==========================
+    var handleSuccess = function(res) {
+      authToken.setToken(res.data.token);
+      authToken.setUser(username);
+      return res.data;
+    }
+
+    var handleError = function(res) {
+      return $q.reject(res.data);
+    }
 
 })(window, window.angular)

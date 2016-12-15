@@ -20,16 +20,12 @@
       // Log user in
       vm.doLogin = function() {
         authService.login(vm.loginData.username, vm.loginData.password)
-          .success(function(data) {
-
-            authService.getUser();
-
-            if(data.success) {
+          .then(function(response) {
+            if(response.success) {
               $location.path('/');
               $window.location.reload()
             } else {
-              console.log(data.message);
-              vm.error = data.message;
+              vm.error = response.message;
               $location.path('/login');
             }
           })

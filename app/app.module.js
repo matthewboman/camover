@@ -4,7 +4,7 @@
     // My modules
     'camoverRoutes',
     'map',
-    'user'
+    'user',
     ])
 
 })(window, window.angular);

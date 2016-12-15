@@ -29,7 +29,8 @@ module.exports.loginUser = function(req, res) {
   userService.authenticate(req.body.username, req.body.password)
     .then(function (token) {
         res.send({
-          success: true,
+          // success: true,
+          status: 200,
           token: token });
     })
     .catch(function (err) {
