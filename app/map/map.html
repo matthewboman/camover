@@ -3,8 +3,8 @@
 
   <!-- Place marker for each camera -->
   <marker id='{{camera._id}}' position="{{camera.position}}"
-        ng-repeat="camera in vm.cameras"
-        on-click="vm.showDetail(camera)">
+    ng-repeat="camera in vm.cameras"
+    on-click="vm.showDetail(camera)">
   </marker>
 
   <marker id="newCamera" position="{{e.latLng}}">
@@ -34,7 +34,7 @@
               <textarea name="info" cols="40" rows="5" type="text" class="form-control" id="info" placeholder="useful information" ng-model="vm.formData.info"></textarea>
           </div>
           <!-- Submit button.-->
-          <button type="submit" class="btn btn-danger btn-block" ng-click="vm.createNewCamera()">Add Camera</button>
+          <button type="submit" class="btn btn-block" ng-click="vm.createNewCamera()">Add Camera</button>
       </form>
     </div>
   </info-window>

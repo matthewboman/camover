@@ -1,26 +1,150 @@
+/*Main Body
+-----------------------------------------------------*/
 body {
   background-color: #56657F;
   font-family: 'Conso', Courier New, monospace;
   font-size: 1.5em;
 }
 
-h4 {
-  font-weight: bold;
-}
-
 a {
   color: #889FC9;
 }
 
+a:hover {
+  text-decoration: none;
+  color: #ABC8FC;
+  text-shadow: 0 0 5px #ABC8FC;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+h3 {
+  text-align: center;
+}
+
 .footer {
-  position: static;
+  /*position: absolute;*/
+  right: 0;
   bottom: 0;
+  left: 0;
+  padding: 1rem;
   text-align: right;
+  font-size: 1.2em;
+}
+
+.btn-block {
+  color: #889FC9;
+  background-color: #56657F;
+  background:rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0px 0px 20px 10px #000000;
+          box-shadow: inset 0px 0px 20px 10px #000000);
+}
+
+.btn-block:hover, .btn-block:focus, .btn-block:active, .btn-block.active, .open>.dropdown-toggle.btn-block {
+  color: #ABC8FC;
+  text-shadow: 0 0 5px #ABC8FC;
 }
 
 
-/*google map*/
+/*Navbar
+-----------------------------------------------------*/
+.navbar{
+  background:rgba(0,0,0,0.5);
+  -webkit-box-shadow: inset 0px 0px 20px 10px #000000;
+          box-shadow: inset 0px 0px 20px 10px #000000);
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  background-color: transparent;
+  color: #ABC8FC;
+  text-shadow: 0 0 5px #ABC8FC;
+}
+
+li {
+  padding-top: .2em;
+}
+
+li :hover,
+li :focus{
+  background-color: transparent !important;
+  color: #ABC8FC;
+  text-shadow: 0 0 5px #ABC8FC;
+}
+
+.icon-bar {
+  background-color: #889FC9;
+}
+
+/* Google Map
+--------------------------------------------------------*/
 ng-map {
  height: 80%;
  width: 100%;
+}
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+/*Smart Phone*/
+@media (min-width: 300px) {
+  .navbar {
+    border-radius: 0 0 6px 6px;
+  }
+}
+
+/* Override Bootstrap navbar breakpoint */
+@media (max-width: 991px) {
+  .navbar-header {
+      float: none;
+  }
+  .navbar-left,.navbar-right {
+      float: none !important;
+  }
+  .navbar-toggle {
+      display: block;
+  }
+  .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+  }
+  .navbar-collapse.collapse {
+      display: none!important;
+  }
+  .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+  }
+  .navbar-nav>li {
+      float: none;
+  }
+  /*.navbar-nav>li>a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }*/
+  .collapse.in{
+      display:block !important;
+  }
+}
+
+/*Tablet*/
+@media (min-width: 992px) {
+  .navbar {
+
+  }
+}
+
+/*Laptop / Desktop*/
+@media (min-width: 1200px) {
+  .navbar {
+    background:rgba(0,0,0,0.5);
+    /*-webkit-box-shadow: inset 0px 0px 150px 30px #000000;
+            box-shadow: inset 0px 0px 150px 30px #000000);*/
+  }
 }

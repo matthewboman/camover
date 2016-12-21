@@ -17,7 +17,7 @@
   <body ng-controller="authCtrl as main">
 
     <!-- Navbar -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar">
       <div class="container">
 
         <div class="navbar-header">
@@ -35,9 +35,9 @@
               <li><a ui-sref="about">about</a></li>
               <li><a ui-sref="contribute">contribute</a></li>
               <li><a ui-sref="references">references</a></li>
-              <li ng-if="!main.loggedIn"><a ui-sref="login">login</a></li>
-              <li ng-if="!main.loggedIn"><a ui-sref="register">register</a></li>
-              <li ng-if="main.loggedIn"><a ui-sref="logout" ng-click="main.doLogout()">logout</a></li>
+              <li class="right" ng-if="!main.loggedIn"><a ui-sref="login">login</a></li>
+              <li class="right" ng-if="!main.loggedIn"><a ui-sref="register">register</a></li>
+              <li class="right" ng-if="main.loggedIn"><a ui-sref="logout" ng-click="main.doLogout()">logout</a></li>
           </ul>
         </div>
 
@@ -53,8 +53,8 @@
     <!-- Footer -->
     <div class="footer">
       <div class=container>
-      <p><a class="btn btn-social-icon btn-github">Check us out on Github<span class="fa fa-github"></span></a></p>
-    </div>
+        <p><a class="btn btn-social-icon btn-github">Check us out on Github<span class="fa fa-github"></span></a></p>
+      </div>
     </div>
 
   </body>

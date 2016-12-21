@@ -5,6 +5,7 @@
 
     var vm = this;
     var username = localStorage.getItem('username');
+    var token = localStorage.getItem('token');
 
     // ==================== Map =====================================
     // Display map
@@ -22,7 +23,7 @@
     // Display info window for camera
     vm.showDetail = function(e, camera) {
       vm.camera = camera;
-      vm.map.showInfoWindow('camera', camera._id);
+      vm.map.showInfoWindow('camera', this); // changed from camera._id
     };
 
     // Display info window for user click
@@ -45,7 +46,7 @@
         info: info,
         voted: [username]
       };
-      if (!username) {
+      if (!token) {
         $uibModal.open({
           templateUrl: './app/views/popup.html',
         });
